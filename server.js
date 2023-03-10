@@ -1,18 +1,14 @@
-const express = require('express');
-const app = express();
-const path = require('path');
-const bodyParser = require('body-parser');
-const router = express.Router();
+var express = require('express');
+var app = express();
 
-// Middlewares
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
 
-// API
-app.use('/', require('./controller/controller'));
+var server = app.listen(3000, '0.0.0.0', function () {
 
-// Server
-const port = process.env.PORT;
-app.listen(port, function () {
-    console.log('listening on port:' + port);
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
 });
