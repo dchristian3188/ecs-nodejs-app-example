@@ -1,5 +1,5 @@
-FROM public.ecr.aws/bitnami/node:14.21.3-debian-11-r6
-RUN apt-get update && apt-get install git -y && apt-get install imagemagick -y;
+FROM public.ecr.aws/docker/library/node:10.23.0
+RUN apt-get update && apt-get install git -y &&
 
 WORKDIR /ecs-app
 
