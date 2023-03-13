@@ -1,5 +1,5 @@
-FROM public.ecr.aws/docker/library/node:10.23.0
-RUN apt-get update && apt-get install git -y &&
+FROM public.ecr.aws/docker/library/node:lts-hydrogen
+RUN apt-get update && apt-get install git -y
 
 WORKDIR /ecs-app
 
